@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    .large{
+        font-size: 50px;
+    }
+</style>
+</head>
+<body>
+    <div id = "app" >
+        <div class ="container">
+            <header><h1>{{ title }}</h1></header>
+            <form class="form">
+                <div class="input-group mb-3">
+                    <input id="itemForm" type = "text" class = "form-control" placeholder="Add Task"></input>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" v-on:click="addItem" type="button" >Add</button>
+                    </div>
+                </div>
+            </form>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"> Tasks </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in items">
+                        <th scope="row">{{ item.text }} <button v-on:click="deleteItem(index)" class="btn btn-danger">X</button></th>
+                    </tr>
+                </tbody>
+            </tabel>
+        </div>
+       
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src= "script.js"></script>
+</body>
+</html>
